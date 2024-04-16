@@ -1,0 +1,202 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.header {
+  height: 100vh;
+  background-image: linear-gradient(120deg, rgba(238, 161, 253, 0) 0%, rgba(225, 194, 251, 0) 100%), url(../img/fondoP.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+nav {
+  background-color: #3498db; /* Color de fondo azul */
+  padding: 10px 0; /* Espaciado interno para los enlaces */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #2980b9; /* Color de fondo azul más oscuro al pasar el ratón */
+  border-radius: 5px;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Estilos para los cursos */
+main {
+  padding: 20px 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente detrás de los cursos */
+}
+
+#cursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.curso {
+  width: calc(33.33% - 20px); 
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.curso img {
+  max-width: 150px; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+/* Estilos para el pie de página */
+.footer {
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.derechos {
+  background-color: #2980b9;
+  padding: 20px 0;
+}
+
+/* Estilos para el cuadro de diálogo */
+#cuadro-dialogo {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #3498db; /* Color de fondo azul */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white; /* Color del texto */
+}
+
+#cuadro-dialogo h2 {
+  margin-top: 0;
+}
+
+#botones {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#cuadro-dialogo a,
+#cuadro-dialogo label {
+  color: white; /* Color del texto */
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+#cuadro-dialogo a:hover,
+#cuadro-dialogo label:hover {
+  background-color: #2980b9; /* Color de fondo azul más oscuro al pasar el ratón */
+  border-radius: 5px;
+}
+
+#cerrar-sesion-toggle {
+  display: none; /* Oculta el checkbox */
+}
+
+#cerrar-sesion-toggle:checked ~ #cuadro-dialogo {
+  display: block; /* Muestra el cuadro de diálogo cuando el checkbox está marcado */
+}
+
+/* Estilo para el botón "Cerrar Sesión" */
+.cerrar-sesion {
+  color: white;
+}
+
+/* Estilos para la sección de comentarios */
+#comentarios {
+  padding: 20px;
+}
+
+#lista-comentarios {
+  margin-bottom: 20px;
+}
+
+#texto-comentario {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#error-message:target {
+  display: block;
+}
+
+.exito,
+.error {
+  display: none;
+}
+
+#enviar-comentario a:link,
+#cancelar-comentario a:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+#enviar-comentario a:hover,
+#cancelar-comentario a:hover {
+  cursor: pointer;
+}
+
+#error-message:target .error {
+  display: block;
+}
+
+#success-message:target .exito {
+  display: block;
+}
+/* Estilos para los botones */
+#enviar-comentario {
+  background-color: green;
+  color: white;
+}
+
+#cancelar-comentario {
+  background-color: red;
+  color: white;
+}
+
+
+
+
+

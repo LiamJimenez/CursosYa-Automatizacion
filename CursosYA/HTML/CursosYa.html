@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CursosYa</title>
+    <link rel="stylesheet" href="../CSS/CursosYa.css">
+</head>
+<body>
+    <header class="header" id="Inicio">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#cursos" id="link-cursos">Cursos</a></li> 
+                    <li><a href="#cursos-populares" id="link-cursos-populares">Cursos Populares</a></li> 
+                    <li><a href="CursosGratuitos.html" id="link-cursos-gratuitos">Cursos Gratuitos</a></li> 
+                    <li><a href="#derechos" id="link-derechos">Derechos</a></li>
+                    <li><a href="Nosotros.html" id="link-nosotros">Nosotros</a></li>
+                    <li><a href="Ayuda.html" id="link-Ayuda">Ayuda</a></li>
+                    <li id="cerrar-sesion-item"><label for="cerrar-sesion-toggle" class="cerrar-sesion">Cerrar Sesión</label></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cuadro de diálogo -->
+    <input type="checkbox" id="cerrar-sesion-toggle">
+    <div id="cuadro-dialogo">
+        <h2>¿Desea cerrar sesión?</h2>
+        <div id="botones">
+            <a href="login.html" id="boton-si">Sí</a>
+            <label for="cerrar-sesion-toggle" id="boton-no">No</label>
+        </div>
+    </div>
+
+    <main>
+        <h1 id="cursos">Cursos</h1>
+        <section id="cursos">
+            <div class="curso">
+                <h3>Curso 1</h3>
+                <p>Precio: $100</p>
+                <img src="../img/Curso HTML.png" alt="HTML Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 2</h3>
+                <p>Precio: $120</p>
+                <img src="../img/Curso CSS.png" alt="CSS Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 3</h3>
+                <p>Precio: $80</p>
+                <img src="../img/Curso Javascript.png" alt="Javascript Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 4</h3>
+                <p>Precio: $60</p>
+                <img src="../img/Curso Bootstrap.png" alt="Bootstrap Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 5</h3>
+                <p>Precio: $110</p>
+                <img src="../img/Curso MySql.png" alt="MySql Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 6</h3>
+                <p>Precio: $90</p>
+                <img src="../img/Curso Python.png" alt="Python Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 7</h3>
+                <p>Precio: $40</p>
+                <img src="../img/Curso React.png" alt="React Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 8</h3>
+                <p>Precio: $50</p>
+                <img src="../img/Curso Unity.png" alt="Unity Image">
+            </div>
+        </section>
+    </main>
+    <main>
+        <h1 id="cursos-populares">Cursos Populares</h1>
+        <section id="cursos">
+            <div class="curso">
+                <h3>Curso 1</h3>
+                <p>Precio: $100</p>
+                <img src="../img/Curso HTML.png" alt="HTML Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 2</h3>
+                <p>Precio: $120</p>
+                <img src="../img/Curso CSS.png" alt="CSS Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 3</h3>
+                <p>Precio: $80</p>
+                <img src="../img/Curso Javascript.png" alt="Javascript Image">
+            </div>
+            <div class="curso">
+                <h3>Curso 6</h3>
+                <p>Precio: $90</p>
+                <img src="../img/Curso Python.png" alt="Python Image">
+            </div>
+        </section>
+    </main>
+
+    <div id="comentarios" class="container">
+        <h2>Comentarios</h2>
+        <div id="lista-comentarios"></div>
+        <textarea id="texto-comentario" rows="4" cols="50"></textarea><br>
+        <button id="enviar-comentario" onclick="mostrarMensaje('mensaje-exito')">Enviar</button>
+        <button id="cancelar-comentario" onclick="mostrarMensaje('mensaje-error')">Cancelar</button>
+        <p id="mensaje-exito" class="exito">Comentario enviado</p>
+        <p id="mensaje-error" class="error">Comentario cancelado</p>
+    </div>
+
+    <footer class="footer" id="derechos">
+        <div class="container">
+            <div class="derechos">
+                <h2>Derechos</h2>
+                <p>Derechos de autor a Liam Marcos Jimenez Perez, matrícula 2022-0818.</p>
+                <a id="mas-informacion-derechos" href="Informacion.html">Para más información sobre los derechos de autor, haz clic aquí.</a>
+            </div>
+        </div>
+    </footer>    
+
+    <script>
+        function mostrarMensaje(idMensaje) {
+            var mensajes = document.querySelectorAll('.exito, .error');
+            mensajes.forEach(function(mensaje) {
+                mensaje.style.display = 'none';
+            });
+            var mensajeMostrar = document.getElementById(idMensaje);
+            mensajeMostrar.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+

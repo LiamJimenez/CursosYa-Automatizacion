@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../CSS/registro.css">
+    <style>
+        /* Estilos para el cuadro emergente */
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="registro-container">
+        <h2>Registro</h2>
+        <form id="registrationForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombreR" name="nombre" required>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="emailR" name="email" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="passwordR" name="password" required>
+            <button type="submit" id="btn-registrarse">Registrarse</button>
+        </form>
+    </div>
+    
+    <!-- Cuadro emergente -->
+    <div class="popup" id="popup">Cuenta creada</div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe
+
+            var email = document.getElementById("emailR").value;
+            // Verificar si el correo electrónico es "hola@gmail.com"
+            if (email !== "hola@gmail.com") {
+                // Mostrar el mensaje de "correo electrónico inexistente"
+                document.getElementById("popup").innerText = "Correo electrónico inexistente";
+                document.getElementById("popup").style.backgroundColor = "#f44336"; // Cambiar color a rojo
+                document.getElementById("popup").style.display = "block";
+                // Después de 3 segundos, ocultar el cuadro emergente
+                setTimeout(function(){
+                    document.getElementById("popup").style.display = "none";
+                }, 3000);
+            } else {
+                // Mostrar el mensaje de "Cuenta creada" si el correo electrónico es correcto
+                document.getElementById("popup").innerText = "Cuenta creada";
+                document.getElementById("popup").style.backgroundColor = "#4CAF50"; // Cambiar color a verde
+                document.getElementById("popup").style.display = "block";
+                // Limpiar los campos de texto
+                document.getElementById("nombreR").value = "";
+                document.getElementById("emailR").value = "";
+                document.getElementById("passwordR").value = "";
+                // Después de 3 segundos, ocultar el cuadro emergente
+                setTimeout(function(){
+                    document.getElementById("popup").style.display = "none";
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>

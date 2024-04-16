@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="../CSS/RecuperarCont.css">
+    <style>
+        .success-message {
+            color: green;
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="recovery-container">
+        <h2>Recuperar Contraseña</h2>
+        <form id="recoveryForm">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Nueva Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirm-password">Confirmar Contraseña:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <div id="message" class="message"></div>
+            <button type="submit" id="btn-continuar">Continuar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("recoveryForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe
+
+            // Obtener los valores ingresados por el usuario
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+
+            // Verificar si el correo electrónico es correcto y las contraseñas coinciden
+            if (email === "hola@gmail.com" && password === "123456789" && password === confirmPassword) {
+                // Si son correctos, mostrar un mensaje de éxito
+                showMessage("success", "Contraseña cambiada");
+            } else if (email === "hola@gmail.com" && password !== confirmPassword) {
+                // Si las contraseñas no coinciden, mostrar un mensaje de error
+                showMessage("error", "Las contraseñas no coinciden");
+            } else {
+                // Si el correo electrónico es incorrecto, mostrar un mensaje de error
+                showMessage("error", "Correo electrónico incorrecto");
+            }
+        });
+
+        function showMessage(type, message) {
+            var messageDiv = document.getElementById("message");
+            messageDiv.textContent = message;
+            if (type === "success") {
+                messageDiv.className = "success-message";
+            } else if (type === "error") {
+                messageDiv.className = "error-message";
+            }
+        }
+    </script>
+</body>
+</html>
